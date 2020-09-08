@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/Award_<?php echo rand(1, 100); ?>.png">
 
     <?php if( !@$_GET['url'] ) { ?>
     <script src="falling-images.js"></script>

@@ -1,0 +1,219 @@
+$accent: #d00000;
+$gray: #e7e7e7;
+$dark-gray: #a1a1a1;
+$font: 'PT Serif', serif;
+$sans: 'PT Sans', 'Roboto', sans-serif;
+$gap: 15px;
+
+html { font-family: $font; }
+body { margin: 0; }
+
+@keyframes fallingAward {
+    0% {
+        top: -48px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 100vh;
+        opacity: 1;
+    }
+}
+
+.falling-award {
+    position: absolute;
+    width: 32px;
+    opacity: 0;
+    pointer-events: none;
+
+    animation-name: fallingAward;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+body.no-focus { animation-play-state: paused; }
+
+#main {
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+
+    .hero {
+        background-color: $gray;
+        padding: $gap;
+        position: relative;
+        z-index: 50;
+
+        .headline {
+            margin: 0;
+            line-height: 1em;
+            
+            .version {
+                font-family: $sans;
+                font-size: 15px;
+                font-weight: normal;
+            }
+        }
+
+        .byline {
+            margin-top: 0;
+
+            a {
+                color: $accent;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .form {
+            display: flex;
+    
+            .input, .button {
+                border-radius: 0;
+                border: none;
+                padding: 10px 15px;
+    
+                background-color: white;
+                outline: none;
+                cursor: pointer;
+    
+                font-size: 16px;
+                font-family: $font;
+            }
+    
+            .input {
+                width: 100%;
+    
+                &:focus {
+                    cursor: text;
+                }
+            }
+    
+            .button {
+                background-color: $accent;
+                color: white;
+                transition: background 0.2s;
+                
+                margin-left: $gap;
+
+                .loader {
+                    height: 11px;
+                }
+    
+                &:hover {
+                    background-color: darken($accent, 5)
+                }
+            }
+        }
+    }
+
+    .response {
+        .stats {
+            border-bottom: solid 1px $gray;
+
+            .stat {
+                font-family: $sans;
+                font-weight: bold;
+                font-size: 24px;
+            }
+        }
+
+        .awards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 32px);
+            grid-gap: $gap;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: $gap;
+
+            &:after {
+                content: '';
+                flex: auto;
+            }
+
+            .award {
+                width: 32px;
+                cursor: pointer;
+                transition: transform 0.2s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+    .tooltip {
+        position: absolute;
+        display: grid;
+        grid-gap: $gap;
+
+        max-width: 300px;
+        width: 100%;
+
+        font-family: $sans;
+        background-color: $gray;
+        opacity: 0;
+        
+        margin-top: 30px;
+        padding: $gap;
+        
+        transition: opacity 0.2s;
+        transition-delay: 0.3s;
+        pointer-events: none;
+        
+        &.tooltip-shown {
+            opacity: 1;
+            transition-delay: 0s;
+        }
+
+        .award-header {
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            align-items: center;
+            grid-gap: $gap;
+
+            .award-name {
+                line-height: 1.1em;
+            }
+        }
+
+        .award-name, .award-description, .award-cost {
+            margin: 0;
+        }
+
+        .award-description {
+            .coin-symbol {
+                color: #dbbd43;
+            }
+        }
+        
+        .award-cost {
+            &:before {
+                content: '© ';
+                color: #dbbd43;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 700px) {
+    .falling-award {
+        display: none;
+    }
+
+    #main {
+        margin-top: 0;
+
+        .error {
+            padding: 15px;
+            padding-top: 0;
+        }
+
+        .response {
+            padding: $gap;
+            padding-top: 0;
+        }
+    }
+}

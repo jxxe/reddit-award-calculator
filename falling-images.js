@@ -1,5 +1,11 @@
 (()=>{
 
+for(let i = 1; i <= 100; i++) {
+    let img = new Image();
+    img.src = 'images/Award_' + i + '.png';
+    console.log('Preloaded Award_' + i + '.png')
+}
+
 // FALLING IMAGES
 
 if( window.innerWidth > 750 ) {

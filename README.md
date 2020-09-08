@@ -1,5 +1,5 @@
 # Reddit Award Calculator
-This is a tool to calculate the value of a Reddit post in USD based on its awards.
+Calculate the approximate value of a Reddit post's awards in USD
 
 ## Plans for the future
 - [ ] Support comments

@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/Award_<?php echo rand(1, 100); ?>.png">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122805750-7"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122805750-7');
+    </script>
+
     <?php if( !@$_GET['url'] ) { ?>
     <script src="falling-images.js"></script>
     <style>

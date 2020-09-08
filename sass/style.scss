@@ -43,25 +43,41 @@ body.no-focus { animation-play-state: paused; }
         position: relative;
         z-index: 50;
 
-        .headline {
-            margin: 0;
-            line-height: 1em;
-            
-            .version {
-                font-family: $sans;
-                font-size: 15px;
-                font-weight: normal;
+        .hero-header {
+            display: grid;
+            grid-template-columns: 1fr 32px;
+            align-items: center;
+
+            .headline {
+                margin: 0;
+                line-height: 1em;
+                
+                .version {
+                    font-family: $sans;
+                    font-size: 15px;
+                    font-weight: normal;
+                }
             }
-        }
+    
+            .byline {
+                margin-top: 0;
+    
+                a {
+                    color: $accent;
+    
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
 
-        .byline {
-            margin-top: 0;
-
-            a {
-                color: $accent;
+            .github {
+                margin-bottom: 10px;
+                opacity: 0.25;
+                transition: all 0.2s;
 
                 &:hover {
-                    text-decoration: none;
+                    opacity: 1;
                 }
             }
         }

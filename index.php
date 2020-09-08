@@ -3,13 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reddit Award Calculator</title>
 
+    <!-- Main Meta Tags -->
+    <title>Reddit Award Calculator</title>
+    <meta name="title" content="Reddit Award Calculator">
+    <meta name="description" content="Calculate the approximate value of a Reddit post's awards in USD">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://projects.jeromepaulos.com/awards">
+    <meta property="og:title" content="Reddit Award Calculator">
+    <meta property="og:description" content="Calculate the approximate value of a Reddit post's awards in USD">
+    <meta property="og:image" content="https://projects.jeromepaulos.com/awards/social.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://projects.jeromepaulos.com/awards">
+    <meta property="twitter:title" content="Reddit Award Calculator">
+    <meta property="twitter:description" content="Calculate the approximate value of a Reddit post's awards in USD">
+    <meta property="twitter:image" content="https://projects.jeromepaulos.com/awards/social.png">
+
+    <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/Award_<?php echo rand(1, 100); ?>.png">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122805750-7"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,6 +39,7 @@
     </script>
 
     <?php if( !@$_GET['url'] ) { ?>
+    <!-- Conditinal Assets -->
     <script src="falling-images.js"></script>
     <style>
         @media all and (min-width: 700px) {

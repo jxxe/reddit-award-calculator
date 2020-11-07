@@ -5,6 +5,6 @@ Calculate the approximate value of a Reddit post's awards in USD
 - [ ] Support comments
 - [ ] Store requests in a database
   - [ ] Post leaderboard
-  - [ ] Server duplicate requests from database
+  - [ ] Serve duplicate requests from database
 - [ ] Rewrite `request.php` (originally designed to be an API/AJAX situation)
 - [ ] Show post/comment information on request page
